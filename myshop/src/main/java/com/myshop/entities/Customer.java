@@ -20,12 +20,12 @@ public class Customer {
     private String city;
     private String state;
     private int pincode;
-    private int mobile1;
-    private int mobile2;
-    private int landline;
+    private String mobile1;
+    private String mobile2;
+    private String landline;
     private String gstno;
     private String reference;
-    private String created_date; 
+    private String created_date;
     
     /**
      * @return the csid
@@ -98,6 +98,20 @@ public class Customer {
     }
     
     /**
+     * @return the city
+     */
+    public String getCity() {
+        return city;
+    }
+    
+    /**
+     * @param city the city to set
+     */
+    public void setCity(String city) {
+        this.city = city;
+    }
+    
+    /**
      * @return the state
      */
     public String getState() {
@@ -128,29 +142,43 @@ public class Customer {
     /**
      * @return the mobile1
      */
-    public int getMobile1() {
+    public String getMobile1() {
         return mobile1;
     }
     
     /**
      * @param mobile1 the mobile1 to set
      */
-    public void setMobile1(int mobile1) {
+    public void setMobile1(String mobile1) {
         this.mobile1 = mobile1;
     }
     
     /**
      * @return the mobile2
      */
-    public int getMobile2() {
+    public String getMobile2() {
         return mobile2;
     }
     
     /**
      * @param mobile2 the mobile2 to set
      */
-    public void setMobile2(int mobile2) {
+    public void setMobile2(String mobile2) {
         this.mobile2 = mobile2;
+    }
+    
+    /**
+     * @return the landline
+     */
+    public String getLandline() {
+        return landline;
+    }
+    
+    /**
+     * @param landline the landline to set
+     */
+    public void setLandline(String landline) {
+        this.landline = landline;
     }
     
     /**
@@ -180,37 +208,29 @@ public class Customer {
     public void setReference(String reference) {
         this.reference = reference;
     }
+    
+    /**
+     * @return the created_date
+     */
+    public String getCreated_date() {
+        return created_date;
+    }
+    
+    /**
+     * @param created_date the created_date to set
+     */
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public int getLandline() {
-		return landline;
-	}
-
-	public void setLandline(int landline) {
-		this.landline = landline;
-	}
-
-	public String getCreated_date() {
-		return created_date;
-	}
-
-	public void setCreated_date(String created_date) {
-		this.created_date = created_date;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [csid=" + csid + ", name=" + name + ", shopname=" + shopname + ", address1=" + address1
-				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", pincode=" + pincode
-				+ ", mobile1=" + mobile1 + ", mobile2=" + mobile2 + ", landline=" + landline + ", gstno=" + gstno
-				+ ", reference=" + reference + ", created_date=" + created_date + "]";
-	}
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Customer [csid=" + csid + ", name=" + name + ", shopname=" + shopname + ", address1=" + address1 + ", address2=" + address2 + ", city=" + city + ", state=" + state + ", pincode=" + pincode + ", mobile1=" + mobile1 + ", mobile2=" + mobile2 + ", landline=" + landline + ", gstno=" + gstno + ", reference=" + reference + ", created_date=" + created_date + "]";
+    } 
+   
+    
 
 }

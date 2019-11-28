@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer createCustomer(Customer customer) {
-    	customer.setCreated_date(new Date().toString());
+    	//customer.setCreated_date(new Date().toString());
         Customer cus = customerDao.saveAndFlush(customer);
         return cus;
     }
@@ -43,9 +43,9 @@ public class CustomerServiceImpl implements CustomerService {
 		if (customer.getShopname()== null) {
 			errorMessages.add("Customer shop name should not be empty");
 		}
-		if (customer.getMobile1() < 1000000000) {
-			errorMessages.add("Customer mobile should not be empty");
-		}
+//		if (customer.getMobile1() < 1000000000) {
+//			errorMessages.add("Customer mobile should not be empty");
+//		}
 		if (customer.getGstno()== null || customer.getGstno().length() !=14) {
 			errorMessages.add("Customer Gstno should not be empty");
 		}
