@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.myshop.Error.ErrorHandler;
 import com.myshop.entities.Customer;
 import com.myshop.services.CustomerService;
 
@@ -19,10 +20,14 @@ public class CustomerController {
     CustomerService customerService;
     
     @PostMapping(value="/custdetails")
-    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
+    public ResponseEntity<?> createCustomer(@RequestBody Customer customer){
+    	
+    	ErrorHandler errorHandler = customerService.validateCustomer(customer);
+    	if (errorHandler != null) {
+    		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorHandler);
+    	}
         
-       Customer customerResponse = customerService.createCustomer(customer);
-        
+    	Customer customerResponse = customerService.createCustomer(customer);
         
         return ResponseEntity.status(HttpStatus.CREATED).body(customerResponse);
     }

@@ -1,6 +1,8 @@
 package com.myshop.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,17 +11,21 @@ import javax.persistence.Table;
 public class Customer {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int csid;
     private String name;
     private String shopname;
     private String address1;
     private String address2;
+    private String city;
     private String state;
     private int pincode;
     private int mobile1;
     private int mobile2;
+    private int landline;
     private String gstno;
     private String reference;
+    private String created_date; 
     
     /**
      * @return the csid
@@ -175,13 +181,36 @@ public class Customer {
         this.reference = reference;
     }
 
-    /* (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return "Customer [csid=" + csid + ", name=" + name + ", shopname=" + shopname + ", address1=" + address1 + ", address2=" + address2 + ", state=" + state + ", pincode=" + pincode + ", mobile1=" + mobile1 + ", mobile2=" + mobile2 + ", gstno=" + gstno + ", reference=" + reference + "]";
-    }
-    
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getLandline() {
+		return landline;
+	}
+
+	public void setLandline(int landline) {
+		this.landline = landline;
+	}
+
+	public String getCreated_date() {
+		return created_date;
+	}
+
+	public void setCreated_date(String created_date) {
+		this.created_date = created_date;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [csid=" + csid + ", name=" + name + ", shopname=" + shopname + ", address1=" + address1
+				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", pincode=" + pincode
+				+ ", mobile1=" + mobile1 + ", mobile2=" + mobile2 + ", landline=" + landline + ", gstno=" + gstno
+				+ ", reference=" + reference + ", created_date=" + created_date + "]";
+	}
 
 }
