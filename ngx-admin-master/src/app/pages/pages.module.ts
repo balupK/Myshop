@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     ThemeModule,
     NbMenuModule,
     DashboardModule,
+    CustomerModule,
     ECommerceModule,
     MiscellaneousModule,
   ],
