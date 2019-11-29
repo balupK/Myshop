@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myshop.entities.Invoice;
+import com.myshop.exception.ErrorCode;
+import com.myshop.exception.MyshopException;
 import com.myshop.services.InvoiceService;
 
 @RestController
@@ -19,13 +21,13 @@ public class InvoiceController {
     private InvoiceService invoiceService;
 
     @PostMapping(value = "/createinvoice")
-    public ResponseEntity<?> createInvoice(@RequestBody Invoice invoice) {
+    public ResponseEntity<?> createInvoice(@RequestBody Invoice invoice) throws MyshopException {
         Invoice inv = null;
         if (invoice != null) {
             try {
                 inv = invoiceService.createInvoice(invoice);
-            } catch (Exception e) {
-
+            } catch (NullPointerException e) {
+                throw new MyshopException("Invoice data empty", ErrorCode.BAD_DATA);
             }
             return ResponseEntity.status(HttpStatus.CREATED).body(inv);
         }
