@@ -15,7 +15,7 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(myshopInterceptor)
-        .addPathPatterns("*/customer/custdetails","*/invoice/createinvoice");
+        .addPathPatterns("*/customer/custdetails","*/invoice/createinvoice","*/");
     }
 
 }
