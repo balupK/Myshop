@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
+import { UserProfileService } from '../../services/userProfile.service';
 
 interface CardSettings {
   title: string;
@@ -13,6 +14,7 @@ interface CardSettings {
   selector: 'ngx-dashboard',
   styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
+  providers:[UserProfileService]
 })
 export class DashboardComponent implements OnDestroy {
 

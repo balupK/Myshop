@@ -4,6 +4,7 @@ import {
   NbButtonModule,
   NbCardModule,
   NbTabsetModule,
+  NbInputModule,
   NbUserModule,
   NbRadioModule,
   NbSelectModule,
@@ -15,6 +16,11 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsModule } from '@angular/forms';
 import { CustomerComponent } from './customer.component';
+// import { FormsComponent } from '../forms/forms.component';
+// import { FormInputsComponent } from '../forms/form-inputs/form-inputs.component';
+// import { FormLayoutsComponent } from '../forms/form-layouts/form-layouts.component';
+// import { DatepickerComponent } from '../forms/datepicker/datepicker.component';
+// import { ButtonsComponent } from '../forms/buttons/buttons.component';
 
 @NgModule({
   imports: [
@@ -23,6 +29,7 @@ import { CustomerComponent } from './customer.component';
     NbCardModule,
     NbUserModule,
     NbButtonModule,
+    NbInputModule,
     NbTabsetModule,
     NbActionsModule,
     NbRadioModule,
@@ -34,6 +41,12 @@ import { CustomerComponent } from './customer.component';
   ],
   declarations: [
     CustomerComponent,
+    //FormsComponent,
+    //ButtonsComponent,
+    //FormInputsComponent,
+    //FormLayoutsComponent,
+    //DatepickerComponent,
   ],
 })
 export class CustomerModule { }
+

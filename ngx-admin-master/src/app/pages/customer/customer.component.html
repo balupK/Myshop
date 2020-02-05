@@ -1,1 +1,21 @@
-<div>Hello</div>
+<div class="row">
+    <div class="col-lg-6">
+      <nb-card>
+        <nb-card-header>CUSTOMER</nb-card-header>
+        <nb-card-body>
+          <input type="text" [(ngModel)]="profile.name" nbInput fullWidth placeholder="Name">
+          <input type="text" [(ngModel)]="profile.shopname" nbInput fullWidth placeholder="Shop Name">
+          <input type="text" [(ngModel)]="profile.gstno" nbInput fullWidth shape="semi-round" placeholder="Gst no">
+          <input type="text" [(ngModel)]="profile.mobile1" nbInput fullWidth shape="semi-round" placeholder="Mobile">
+          <input type="text" [(ngModel)]="profile.mobile2" nbInput fullWidth shape="semi-round" placeholder="Mobile 2">
+          <textarea rows="5" [(ngModel)]="profile.address1" nbInput fullWidth shape="round"  placeholder="Main Address"></textarea>
+          <input type="text" [(ngModel)]="profile.city" nbInput fullWidth shape="semi-round" placeholder="City">
+          <input type="text" [(ngModel)]="profile.state" nbInput fullWidth shape="semi-round" placeholder="State">
+          <input type="text" [(ngModel)]="profile.pincode" nbInput fullWidth shape="semi-round" placeholder="Pincode">
+          <input type="text" [(ngModel)]="profile.reference" nbInput fullWidth shape="semi-round" placeholder="Reference">
+          <textarea rows="5" [(ngModel)]="profile.address2" nbInput fullWidth shape="round"  placeholder="Address 2 if any"></textarea>
+          <button type="submit" (click)="createCustomer()" nbButton>Submit</button>
+        </nb-card-body>
+      </nb-card>
+    </div>
+</div>
